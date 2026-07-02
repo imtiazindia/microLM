@@ -1,0 +1,53 @@
+{
+  "maneuvers": [
+    "Steep Turns",
+    "Slow Flight",
+    "Power-Off Stall",
+    "Power-On Stall",
+    "Crosswind Landing",
+    "Short-Field Landing",
+    "Soft-Field Landing",
+    "Unstable Approach",
+    "Pattern Work",
+    "Radio Communication",
+    "Emergency Procedures",
+    "Go-Around Decision",
+    "Stage Check Readiness",
+    "Solo Readiness"
+  ],
+  "statuses": [
+    "Progressing",
+    "Needs Review",
+    "Remedial Required",
+    "Stage Check Ready",
+    "Not Yet Ready",
+    "Not Yet Solo Ready",
+    "Instructor Review Pending",
+    "Within Standard"
+  ],
+  "dateRanges": ["today", "yesterday", "this week", "last week", "this month", "last month", "latest", "last"],
+  "synonyms": {
+    "bad landing": "Landing Performance Issue",
+    "unstable landing": "Unstable Approach",
+    "approach problem": "Unstable Approach",
+    "weak in landings": "Landing Performance Issue",
+    "landings": "Landing Performance Issue",
+    "not solo ready": "Not Yet Solo Ready",
+    "ready for checkride": "Stage Check Ready",
+    "ready for stage check": "Stage Check Ready",
+    "last flight notes": "Latest Debrief",
+    "latest debrief": "Latest Debrief",
+    "last debrief": "Latest Debrief",
+    "correction plan": "Remedial Plan",
+    "extra training": "Remedial Plan",
+    "intervention": "Remedial Plan",
+    "weak in turns": "Steep Turns Concern",
+    "radio issues": "Radio Communication",
+    "go around late": "Go-Around Decision",
+    "crosswind landings": "Crosswind Landing",
+    "unstable approach issues": "Unstable Approach"
+  },
+  "riskFamilies": {
+    "Landing Performance Issue": ["Unstable Approach", "Crosswind Landing", "Short-Field Landing", "Excessive Float", "Drift Correction Weak"]
+  }
+}

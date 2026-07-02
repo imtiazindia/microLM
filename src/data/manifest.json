@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dashboard",
+    "title": "Dashboard",
+    "type": ["navigation"],
+    "route": "/",
+    "aliases": ["dashboard", "home", "overview"]
+  },
+  {
+    "id": "student-roster",
+    "title": "Student Roster",
+    "type": ["navigation"],
+    "route": "/students",
+    "acceptedFilters": ["instructor", "status", "stage", "soloReadiness", "stageCheckReadiness", "riskCategory"],
+    "aliases": ["students", "student list", "learners", "trainees", "roster"]
+  },
+  {
+    "id": "student-profile",
+    "title": "Student Profile",
+    "type": ["record_open"],
+    "routePattern": "/students/:studentId",
+    "entityType": "student",
+    "requiredSlot": ["studentName", "studentId"],
+    "aliases": ["student profile", "student details", "training history"]
+  },
+  {
+    "id": "debrief-records",
+    "title": "Debrief Records",
+    "type": ["record_open", "navigation"],
+    "route": "/debriefs",
+    "routePattern": "/debriefs/:debriefId",
+    "acceptedFilters": ["student", "instructor", "dateRange", "riskCategory", "outcome"],
+    "aliases": ["debrief", "debriefs", "flight notes", "instructor notes", "latest debrief", "last debrief"]
+  },
+  {
+    "id": "risk-dashboard",
+    "title": "Risk Dashboard",
+    "type": ["navigation"],
+    "route": "/risk",
+    "acceptedFilters": ["riskCategory", "dateRange", "instructor", "status"],
+    "aliases": ["risk", "weak areas", "issues", "concerns", "repeated errors", "training risk", "risk flags"]
+  },
+  {
+    "id": "stage-check",
+    "title": "Stage Check Readiness",
+    "type": ["navigation"],
+    "route": "/stage-check",
+    "acceptedFilters": ["status", "instructor", "stage"],
+    "aliases": ["stage check", "checkride ready", "ready for stage check", "evaluation readiness"]
+  },
+  {
+    "id": "remedial-plan",
+    "title": "Remedial Plan Wizard",
+    "type": ["task_launch"],
+    "route": "/remedial/new",
+    "acceptedPrefill": ["studentId", "studentName", "instructorName", "riskCategory", "maneuver", "sourceDebriefId"],
+    "requiredPermission": "remedial.create",
+    "safetyLevel": "launch_only_requires_user_review",
+    "aliases": ["remedial", "remedial training", "correction plan", "extra training", "intervention", "improvement plan"]
+  },
+  {
+    "id": "manifest-viewer",
+    "title": "Manifest Viewer",
+    "type": ["navigation"],
+    "route": "/manifest",
+    "aliases": ["manifest", "registry", "ibar debug", "routing map"]
+  }
+]

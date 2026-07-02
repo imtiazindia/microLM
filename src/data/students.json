@@ -1,0 +1,189 @@
+[
+  {
+    "id": "stu-emma-johnson",
+    "name": "Emma Johnson",
+    "stage": "Stage 2",
+    "instructor": "Sarah Collins",
+    "status": "Remedial Required",
+    "riskFlags": ["Unstable Approach", "Late Go-Around Decision"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Pattern Work", "Approach Stabilization", "Go-Around Decision"]
+  },
+  {
+    "id": "stu-noah-carter",
+    "name": "Noah Carter",
+    "stage": "Stage 2",
+    "instructor": "Mark Reynolds",
+    "status": "Needs Review",
+    "riskFlags": ["Crosswind Landing", "Drift Correction Weak"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Crosswind Landing", "Pattern Work", "Drift Correction"]
+  },
+  {
+    "id": "stu-ava-martinez",
+    "name": "Ava Martinez",
+    "stage": "Stage 1",
+    "instructor": "Sarah Collins",
+    "status": "Progressing",
+    "riskFlags": ["Radio Communication"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Radio Communication", "Straight and Level", "Taxi Procedures"]
+  },
+  {
+    "id": "stu-liam-brooks",
+    "name": "Liam Brooks",
+    "stage": "Stage 3",
+    "instructor": "Sarah Collins",
+    "status": "Stage Check Ready",
+    "riskFlags": [],
+    "soloReadiness": "Ready",
+    "stageCheckReadiness": "Stage Check Ready",
+    "lessonHistory": ["Steep Turns", "Emergency Procedures", "Stage Review"]
+  },
+  {
+    "id": "stu-olivia-parker",
+    "name": "Olivia Parker",
+    "stage": "Stage 1",
+    "instructor": "Mark Reynolds",
+    "status": "Not Yet Solo Ready",
+    "riskFlags": ["Radio Communication", "Pattern Work"],
+    "soloReadiness": "Not Yet Solo Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Pattern Work", "Radio Communication", "Traffic Pattern"]
+  },
+  {
+    "id": "stu-ethan-miller",
+    "name": "Ethan Miller",
+    "stage": "Stage 2",
+    "instructor": "David Harris",
+    "status": "Needs Review",
+    "riskFlags": ["Short-Field Landing", "Excessive Float"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Short-Field Landing", "Approach Speed Control", "Touchdown Accuracy"]
+  },
+  {
+    "id": "stu-jackson-miller",
+    "name": "Jackson Miller",
+    "stage": "Stage 1",
+    "instructor": "Sarah Collins",
+    "status": "Progressing",
+    "riskFlags": ["Slow Flight"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Slow Flight", "Coordination", "Altitude Control"]
+  },
+  {
+    "id": "stu-sophia-nguyen",
+    "name": "Sophia Nguyen",
+    "stage": "Stage 3",
+    "instructor": "David Harris",
+    "status": "Instructor Review Pending",
+    "riskFlags": ["Emergency Procedures", "Checklist Flow"],
+    "soloReadiness": "Ready",
+    "stageCheckReadiness": "Needs Review",
+    "lessonHistory": ["Emergency Procedures", "Diversion Planning", "Checklist Flow"]
+  },
+  {
+    "id": "stu-mason-reed",
+    "name": "Mason Reed",
+    "stage": "Stage 1",
+    "instructor": "Mark Reynolds",
+    "status": "Remedial Required",
+    "riskFlags": ["Power-Off Stall", "Pitch Control"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Power-Off Stall", "Slow Flight", "Pitch Control"]
+  },
+  {
+    "id": "stu-isabella-chen",
+    "name": "Isabella Chen",
+    "stage": "Stage 2",
+    "instructor": "Sarah Collins",
+    "status": "Within Standard",
+    "riskFlags": [],
+    "soloReadiness": "Ready",
+    "stageCheckReadiness": "Stage Check Ready",
+    "lessonHistory": ["Short-Field Landing", "Soft-Field Landing", "Radio Communication Review", "Navigation Review"]
+  },
+  {
+    "id": "stu-lucas-patel",
+    "name": "Lucas Patel",
+    "stage": "Stage 2",
+    "instructor": "David Harris",
+    "status": "Needs Review",
+    "riskFlags": ["Radio Communication", "Airspace Awareness"],
+    "soloReadiness": "Not Yet Solo Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Radio Communication", "Towered Airport Operations", "Airspace Awareness"]
+  },
+  {
+    "id": "stu-mia-thompson",
+    "name": "Mia Thompson",
+    "stage": "Stage 1",
+    "instructor": "Sarah Collins",
+    "status": "Progressing",
+    "riskFlags": ["Pattern Work", "Altitude Control"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Pattern Work", "Normal Takeoff", "Altitude Control"]
+  },
+  {
+    "id": "stu-benjamin-ross",
+    "name": "Benjamin Ross",
+    "stage": "Stage 3",
+    "instructor": "Mark Reynolds",
+    "status": "Stage Check Ready",
+    "riskFlags": ["Within Standard"],
+    "soloReadiness": "Ready",
+    "stageCheckReadiness": "Stage Check Ready",
+    "lessonHistory": ["Cross-Country Procedures", "Emergency Procedures", "Radio Communication Review", "Stage Check Readiness"]
+  },
+  {
+    "id": "stu-harper-wilson",
+    "name": "Harper Wilson",
+    "stage": "Stage 2",
+    "instructor": "Sarah Collins",
+    "status": "Needs Review",
+    "riskFlags": ["Soft-Field Landing", "Energy Management"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Soft-Field Landing", "Energy Management", "Approach Planning"]
+  },
+  {
+    "id": "stu-daniel-kim",
+    "name": "Daniel Kim",
+    "stage": "Stage 1",
+    "instructor": "David Harris",
+    "status": "Progressing",
+    "riskFlags": ["Steep Turns"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Steep Turns", "Basic Attitude Flying", "Traffic Scanning"]
+  },
+  {
+    "id": "stu-grace-allen",
+    "name": "Grace Allen",
+    "stage": "Stage 3",
+    "instructor": "Sarah Collins",
+    "status": "Remedial Required",
+    "riskFlags": ["Go-Around Decision", "Runway Incursion Awareness"],
+    "soloReadiness": "Ready",
+    "stageCheckReadiness": "Needs Review",
+    "lessonHistory": ["Go-Around Decision", "Airport Surface Operations", "Radio Communication Review", "Scenario Review"]
+  },
+  {
+    "id": "stu-caleb-foster",
+    "name": "Caleb Foster",
+    "stage": "Stage 2",
+    "instructor": "Mark Reynolds",
+    "status": "Instructor Review Pending",
+    "riskFlags": ["Navigation Log", "Fuel Planning"],
+    "soloReadiness": "Not Yet Ready",
+    "stageCheckReadiness": "Not Yet Ready",
+    "lessonHistory": ["Navigation Log", "Fuel Planning", "Cross-Country Planning"]
+  }
+]

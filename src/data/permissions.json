@@ -1,0 +1,34 @@
+{
+  "Chief Instructor": {
+    "students.scope": "all",
+    "debriefs.scope": "all",
+    "risk.view": true,
+    "stageCheck.view": true,
+    "remedial.create": true,
+    "manifest.view": true
+  },
+  "CFI": {
+    "students.scope": "assigned",
+    "debriefs.scope": "assigned",
+    "risk.view": true,
+    "stageCheck.view": true,
+    "remedial.create": true,
+    "manifest.view": false
+  },
+  "Training Manager": {
+    "students.scope": "all",
+    "debriefs.scope": "all",
+    "risk.view": true,
+    "stageCheck.view": true,
+    "remedial.create": true,
+    "manifest.view": true
+  },
+  "Principal": {
+    "students.scope": "all",
+    "debriefs.scope": "summary",
+    "risk.view": true,
+    "stageCheck.view": true,
+    "remedial.create": false,
+    "manifest.view": true
+  }
+}

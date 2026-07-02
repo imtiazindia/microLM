@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ins-sarah-collins",
+    "name": "Sarah Collins",
+    "role": "CFI",
+    "students": ["Emma Johnson", "Ava Martinez", "Liam Brooks", "Jackson Miller", "Isabella Chen", "Mia Thompson", "Harper Wilson", "Grace Allen"]
+  },
+  {
+    "id": "ins-mark-reynolds",
+    "name": "Mark Reynolds",
+    "role": "CFI",
+    "students": ["Noah Carter", "Olivia Parker", "Mason Reed", "Benjamin Ross", "Caleb Foster"]
+  },
+  {
+    "id": "ins-david-harris",
+    "name": "David Harris",
+    "role": "Chief Instructor",
+    "students": ["Ethan Miller", "Sophia Nguyen", "Lucas Patel", "Daniel Kim"]
+  }
+]

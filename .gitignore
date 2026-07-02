@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+flight-school-*.png

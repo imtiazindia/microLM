@@ -1,0 +1,80 @@
+[
+  {
+    "id": "unstable-approach-week",
+    "label": "Unstable approach this week",
+    "command": "Show students with unstable approach issues this week",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/risk",
+      "riskCategory": "Unstable Approach"
+    }
+  },
+  {
+    "id": "emma-latest-debrief",
+    "label": "Emma latest debrief",
+    "command": "Open Emma Johnson's last debrief",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/debriefs/deb-emma-latest",
+      "studentName": "Emma Johnson"
+    }
+  },
+  {
+    "id": "noah-remedial",
+    "label": "Noah remedial crosswind",
+    "command": "Start remedial training for Noah Carter on crosswind landings",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/remedial/new",
+      "studentName": "Noah Carter",
+      "riskCategory": "Crosswind Landing"
+    }
+  },
+  {
+    "id": "stage-check-ready",
+    "label": "Stage check ready",
+    "command": "Show students ready for stage check",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/stage-check",
+      "status": "Stage Check Ready"
+    }
+  },
+  {
+    "id": "not-solo-ready",
+    "label": "Not solo ready",
+    "command": "Find students not ready for solo",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/students",
+      "soloReadiness": "Not Yet Solo Ready"
+    }
+  },
+  {
+    "id": "sarah-review",
+    "label": "Sarah Collins needing review",
+    "command": "Show Sarah Collins' students needing review",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/students",
+      "instructorName": "Sarah Collins"
+    }
+  },
+  {
+    "id": "miller-debrief",
+    "label": "Miller debrief",
+    "command": "Open Miller's debrief",
+    "expected": {
+      "responseState": "disambiguation_required",
+      "studentLastName": "Miller"
+    }
+  },
+  {
+    "id": "delete-emma",
+    "label": "Delete Emma record",
+    "command": "Delete Emma's record",
+    "expected": {
+      "responseState": "clarification_required"
+    }
+  }
+]
