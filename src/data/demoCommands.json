@@ -41,6 +41,26 @@
     }
   },
   {
+    "id": "bare-student-name",
+    "label": "Bare student name",
+    "command": "Ava Martinez",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/students/stu-ava-martinez",
+      "studentName": "Ava Martinez"
+    }
+  },
+  {
+    "id": "bare-instructor-name",
+    "label": "Bare instructor name",
+    "command": "Sarah Collins",
+    "expected": {
+      "responseState": "resolved",
+      "routeStartsWith": "/students",
+      "instructorName": "Sarah Collins"
+    }
+  },
+  {
     "id": "not-solo-ready",
     "label": "Not solo ready",
     "command": "Find students not ready for solo",

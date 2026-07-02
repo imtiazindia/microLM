@@ -38,7 +38,7 @@ import { localMicroLM } from './lib/localMicroLM';
 import { getQuestionHistory, QUESTION_HISTORY_LIMIT, storeQuestion } from './lib/questionHistory';
 import { resolveIntent } from './lib/resolver';
 import { addTelemetry } from './lib/telemetry';
-import type { FeedbackEvent, ModelStatus, QuestionEvent, ResolutionResult, Role, Student, TelemetryEvent } from './types';
+import type { FeedbackEvent, ModelStatus, QuestionEvent, ResolutionResult, Role, StructuredInterpretation, Student, TelemetryEvent } from './types';
 
 const roles: Role[] = ['Chief Instructor', 'CFI', 'Training Manager', 'Principal'];
 const LOCAL_MODEL_NAME = 'SmolLM2-360M-Instruct';
@@ -84,6 +84,13 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
   return <section className={`rounded-lg border border-slate-200 bg-white p-5 shadow-panel ${className}`}>{children}</section>;
 }
 
+function isDeterministicPersonLookup(interpretation: StructuredInterpretation) {
+  return (
+    interpretation.destinationHint === 'student-profile' ||
+    (interpretation.destinationHint === 'student-roster' && interpretation.intentType === 'navigation' && Boolean(interpretation.slots.instructorName))
+  );
+}
+
 function App() {
   const navigate = useNavigate();
   const [role, setRole] = useState<Role>('Chief Instructor');
@@ -103,12 +110,16 @@ function App() {
     setQuestionEvents(storeQuestion(command));
     const startedAt = performance.now();
     const modelStatusAtStart = localMicroLM.status;
-    const localModelAttempted = modelStatusAtStart === 'Ready';
-    let interpretation = null;
+    let localModelAttempted = false;
+    let interpretation: StructuredInterpretation;
     let parserUsed: 'Local microLM' | 'Fallback parser' = 'Fallback parser';
+    const deterministicInterpretation = fallbackParse(command);
 
-    if (localMicroLM.status === 'Ready') {
+    if (isDeterministicPersonLookup(deterministicInterpretation)) {
+      interpretation = deterministicInterpretation;
+    } else if (localMicroLM.status === 'Ready') {
       try {
+        localModelAttempted = true;
         interpretation = await localMicroLM.interpret(command);
         parserUsed = 'Local microLM';
       } catch {
@@ -1016,6 +1027,7 @@ function DemoCommandPanel({
       (!expected.routeStartsWith || Boolean(result.route?.startsWith(expected.routeStartsWith))) &&
       (!expected.studentName || result.resolvedEntities.student?.name === expected.studentName || result.resolvedEntities.debrief?.studentName === expected.studentName) &&
       (!expected.studentLastName || result.extractedSlots.studentLastName === expected.studentLastName) &&
+      (!expected.instructorName || result.extractedSlots.instructorName === expected.instructorName || result.resolvedEntities.instructor?.name === expected.instructorName) &&
       (!expected.riskCategory || result.extractedSlots.riskCategory === expected.riskCategory || String(result.appliedFilters.riskCategory || '').includes(expected.riskCategory)) &&
       (!expected.status || result.extractedSlots.status === expected.status || String(result.appliedFilters.stageCheckReadiness || '').includes(expected.status));
     setResults((current) => ({ ...current, [commandId]: passed }));

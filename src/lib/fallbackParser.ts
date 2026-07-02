@@ -83,6 +83,8 @@ function matchVocabulary(text: string): Pick<
 function inferDestination(text: string, slots: ExtractedSlots): string {
   const normalized = normalize(text);
   if (includesAny(normalized, ['delete', 'remove', 'destroy', 'erase'])) return 'unsafe';
+  const bareEntityDestination = inferBareEntityDestination(normalized);
+  if (bareEntityDestination) return bareEntityDestination;
   if (isMetricsQuestion(normalized)) return 'local-metrics';
   if (isStudentFactQuestion(normalized, slots)) return 'student-fact';
   if ((slots.studentName || slots.studentLastName) && slots.factType) return 'student-fact';
@@ -96,6 +98,22 @@ function inferDestination(text: string, slots: ExtractedSlots): string {
 
   const manifestHit = manifest.find((destination) => destination.aliases.some((alias) => normalized.includes(alias)));
   return manifestHit?.id || 'dashboard';
+}
+
+function inferBareEntityDestination(normalized: string): string | undefined {
+  const matchesStudent = students.some((student) => {
+    const parts = normalize(student.name).split(' ');
+    return normalized === normalize(student.name) || normalized === parts[0] || normalized === parts[parts.length - 1];
+  });
+  if (matchesStudent) return 'student-profile';
+
+  const matchesInstructor = instructors.some((instructor) => {
+    const parts = normalize(instructor.name).split(' ');
+    return normalized === normalize(instructor.name) || normalized === parts[0] || normalized === parts[parts.length - 1];
+  });
+  if (matchesInstructor) return 'student-roster';
+
+  return undefined;
 }
 
 function isRosterListQuestion(normalized: string, slots: ExtractedSlots): boolean {
@@ -180,6 +198,7 @@ export function fallbackParse(command: string): StructuredInterpretation {
   )
     intentType = 'record_open';
   else if (destinationHint === 'student-profile') intentType = 'record_open';
+  else if (destinationHint === 'student-roster' && slots.instructorName) intentType = 'navigation';
   else if (!includesAny(normalized, ['show', 'open', 'find', 'start', 'go', 'view', 'list', 'which', 'who', 'students'])) intentType = 'unknown';
 
   let confidence = 0.55;

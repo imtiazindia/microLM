@@ -1,4 +1,4 @@
-import { manifest, students, vocabulary } from '../lib/data';
+import { instructors, manifest, students, vocabulary } from '../lib/data';
 import type { ModelStatus, StructuredInterpretation } from '../types';
 
 type TextGenerationPipeline = (messages: Array<{ role: string; content: string }>, options: Record<string, unknown>) => Promise<unknown>;
@@ -75,17 +75,21 @@ async function ensureModel(id: number) {
 function buildPrompt(command: string) {
   const manifestNames = manifest.map((destination) => destination.title).join(', ');
   const studentsList = students.map((student) => student.name).join(', ');
+  const instructorsList = instructors.map((instructor) => instructor.name).join(', ');
   const vocabularyList = [...vocabulary.maneuvers, ...vocabulary.statuses, ...Object.values(vocabulary.synonyms)].join(', ');
   return [
     'You classify constrained iBar commands for a fictional flight-school UI.',
     'You are not an aviation advisor. Do not make safety decisions. Do not invent students, records, routes, or training recommendations.',
     `Allowed destination names: ${manifestNames}.`,
     `Allowed students: ${studentsList}.`,
+    `Allowed instructors: ${instructorsList}.`,
     `Allowed vocabulary: ${vocabularyList}.`,
     'Return only compact JSON with keys: intentType, slots, confidence, destinationHint, unsafe, notes.',
     'intentType must be one of navigation, record_open, task_launch, metrics_query, student_fact_query, clarification_required, unknown.',
     'For count questions, use intentType metrics_query and set slots.metric to one of totalStudents, totalDebriefs, remedialRequired, needsReview, stageCheckReady, notSoloReady. Also extract instructorName, stage, riskCategory, soloReadiness, noRiskFlags, highestRiskFlags, clearedRiskCategory, and status filters when present.',
     'For student-specific factual questions, use intentType student_fact_query and set slots.factType to one of stageCheckReadiness, soloReadiness, riskFlags, instructor, stage, status, latestDebrief.',
+    'If the command is only a student name, use intentType record_open, destinationHint student-profile, and slots.studentName or slots.studentLastName.',
+    'If the command is only an instructor name, use intentType navigation, destinationHint student-roster, and slots.instructorName.',
     'slots may include studentName, studentLastName, instructorName, maneuver, riskCategory, clearedRiskCategory, noRiskFlags, highestRiskFlags, dateRange, stage, status, soloReadiness, workflow, targetScreen, recordType, metric, factType.',
     `Command: ${command}`
   ].join('\n');
